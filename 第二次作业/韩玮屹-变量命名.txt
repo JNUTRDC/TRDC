@@ -1,0 +1,11 @@
+let countOrange = 14
+let countWatermelon = 3
+
+let orangeWoods = 100
+let watermelonWoods=200
+let totalOrange = countOrange * orangeWoods
+let totalWatermelon = countWatermelon * watermelonWoods
+let totalTranslateAmount = totalOrange + totalWatermelon
+let everySide = totalTranslateAmount / 2
+let leftHalfSideOrange = everySide * orangeWoods
+let rightHalfSideOrange = countOrange - leftHalfSideOrange

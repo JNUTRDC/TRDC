@@ -1,0 +1,33 @@
+let CaseOrange=14;
+let CaseWatermelon=3;
+
+let OrangeWeight=100;
+let WatermelonWeight=200;
+let TotalOrange=CaseOrange*OrangeWeight;
+let TotalWatermelon=CaseWatermelon*WatermelonWeight；
+let TotalWeight=TotalOrange+TotalWatermelon;
+let HalfWeight=TotalWeight/2；
+let OrangeCaseOfLight= HalfWeight/OrangeWeight;
+let OrangeCaseOfRight=CaseOrange-OrangeCaseOfLight;
+     
+
+
+
+
+
+
+
+#include<stdio.h>
+int main(){
+    int CaseOrange=14;
+    int CaseWatermelon=3;
+    int OrangeWeight=100,WatermelonWeight=200,TotalOrange,TotalWatermelon,TotalWeight,HalfWeight,OrangeCaseOfLight,OrangeCaseOfRight;
+    TotalOrange=CaseOrange*OrangeWeight;
+    TotalWatermelon=CaseWatermelon*WatermelonWeight;
+    TotalWeight=TotalOrange+TotalWatermelon;
+    HalfWeight=TotalWeight/2;
+    OrangeCaseOfLight= HalfWeight/OrangeWeight;
+    OrangeCaseOfRight=CaseOrange-OrangeCaseOfLight;
+    printf("左边橘子箱数%d,右边橘子箱数%d,右边西瓜箱数3",OrangeCaseOfLight,OrangeCaseOfRight);
+    return 0;
+}

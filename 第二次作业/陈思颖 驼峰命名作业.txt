@@ -1,0 +1,8 @@
+#include<iostream>
+using namespace std;
+
+const int WeightO = 100, WeightW = 200, NumbO = 14, NumbW = 3;//Weight重量，Num箱数，O橘子，W西瓜
+int Weight = WeightO*NumbO + WeightW*NumbW,//Weight总重量
+    LiftNumbO = Weight / 2 / WeightO,// LiftNumbO左边的橘子箱数
+    RightNumbO = NumbO - LiftNumbO,//RightNumbO右边的橘子箱数
+    RightNumbW = NumbW;//RightNumbW右边的西瓜箱数

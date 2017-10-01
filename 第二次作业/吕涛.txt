@@ -1,0 +1,10 @@
+let ContainerOrange=14
+let ContainerWatermelon=3
+let OrangeWeight=100
+let WatermelonWeight=200
+let TotalOrange=ContainerOrange*OrangeWeight
+let TotalWatermelon=ContainerWatermelon*WeightWatermelon
+let Total=TotalOrange+TotalWatermelon
+let EverySide=Total/2
+let IeftHalfSideOrange=EverySide/OrangeWeight
+let RightHalfSideWatermelon=ContainerOrange-LeftHalfSideOrange

@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main()
+{
+	int countOfOrange = 14,orangeWeight = 100;
+	cout << "橘子货箱重" << orangeWeight << "磅\n";
+	int countOfWatermelon = 3, wantermelonWeight = 200;
+	cout << "西瓜货箱重" << wantermelonWeight << "磅\n";
+	int totalOrange = countOfOrange*orangeWeight;
+	int	totalWatermelon = countOfWatermelon*wantermelonWeight;
+	int	total = totalOrange + totalWatermelon;
+	cout << "现有橘子货箱" << countOfOrange << "个和西瓜货箱" << countOfWatermelon << "个\n";
+	cout << "装车过程要求先装左边再装右边，保持平衡且西瓜始终放在右边，每边各装多少？\n";
+	int equalSide = total/2;
+	int	leftHoldOrange = equalSide/orangeWeight;
+	int	rightHoldOrange = countOfOrange-leftHoldOrange;
+	cout << "想要知道答案，请自行百度一下。\n";
+	Sleep(2000);
+	cout << "                              百度一下\n";
+	cout << "度娘说左边装" << leftHoldOrange << "个橘子货箱，右边装" << rightHoldOrange << "个橘子货箱和" << countOfWatermelon << "个西瓜货箱\n";
+	cin.get();
+	return 0;
+}

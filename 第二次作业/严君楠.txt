@@ -1,0 +1,14 @@
+#include <stdio.h>
+void main()
+{    int CountOrange=14;
+     int CountWatermelon=3;
+	 int OrangeWeight=100;
+	 int WatermelonWeight=200;
+	 int Total=Count*OrangeWeight;
+	 int TotalWatermelon=Count*WatermelonWeight;
+	 int Total=TotalOrange+TotalWatermelon;
+	 int Equipoise=total/2;
+     int LeftHalfSideOrange=Equipoise/OrangeWeight;
+	 int RightHalfSideOrange =CountOrange-LeftHalfSideOrange;
+	 printf("%d,%d\n",LeftOrangeWatermelon,RightOrangeWatermelon);
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+	int countOrange = 14; 
+	int countWatermelon = 3;
+	int orangeWeight = 100;
+	int watermelonWeight = 200;
+	int totaOrange =orangeWeight*countOrange;
+	int totalWatermelon = watermelonWeight*countWatermelon;
+	int total = totaOrange+totalWatermelon;
+	int half = total/2;
+	int countLeft = half/orangeWeight;
+	int right = countOrange - countLeft;
+	printf("左边放%d箱子的橘子，右边放%d箱子的橘子和%d箱子的西瓜\n",countLeft,right,countWatermelon);
+
+	return 0;
+}

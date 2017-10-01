@@ -1,0 +1,15 @@
+﻿#include<stdio.h>
+main()
+{
+    int CourtOrange=14,CourtWatermelon=3;
+    int OrangeWeight=100,WatermelonWeight=200;
+    int TotalOrange,TotalWatermelon,Total,EachSide,LeftSide,RightSide;
+    TotalOrange=CourtOrange×OrangeWeight;
+    TotalWatermelon=CourtWatermelon×WatermelonWeight;
+    Total=TotalOrange+TotalWatermelon;
+    EachSide=Total/2;
+    LeftSide=EachSide/OrangeWeight;
+    RightSide=CourtOrange-LeftSide;
+    printf("Left:%d\n",LeftSide);
+    printf("Right:%d\n",RightSide);
+}
