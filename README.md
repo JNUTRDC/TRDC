@@ -44,13 +44,13 @@
 6. [加入我们](https://github.com/JNUTRDC/TRDC/invitations)
 
 7. 提交代码
-在本地创建项目文件，在 Bash 下键入一下代码： 
+在本地创建项目文件，在 Bash 下键入一下代码： <br>
 mkdir test  //创建目录<br>
-cd test     //链接到此目录
-git init    //创建本地产库产库
-git add README
-git commit -m 'first commit'
-git remote add origin git@github.com:JNUTRDC/TRDC.git
+cd test     //链接到此目录<br>
+git init    //创建本地产库产库<br>
+git add README<br>
+git commit -m 'first commit'<br>
+git remote add origin git@github.com:JNUTRDC/TRDC.git<br>
 git push -u origin master
 
 
