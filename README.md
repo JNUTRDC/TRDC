@@ -45,7 +45,7 @@
 
 7. 提交代码
 在本地创建项目文件，在 Bash 下键入一下代码： 
-mkdir test  //创建目录
+mkdir test  //创建目录<br>
 cd test     //链接到此目录
 git init    //创建本地产库产库
 git add README
