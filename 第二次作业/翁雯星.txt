@@ -1,0 +1,11 @@
+let orangeCount = 14
+let watermelonCount = 3
+
+let orangeWeight = 100
+let watermelonWeight = 200
+let orangeTotalWeight = orangeCount * orangeWeight
+let watermelonTotalWeight = watermelonCount *watermelonWeight
+let totalWeight = orangeTotalWeight+watermelonTotalWeight
+let eachSpace =totalWeight / 2
+let leftSpaceOfTruck =eachSpace / orangeWeight
+let rightSpaceOfTruck =orangeCount - leftSpaceOfTruck
