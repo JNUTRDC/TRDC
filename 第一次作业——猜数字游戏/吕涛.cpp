@@ -1,0 +1,100 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+int main()
+{
+	int a,b,c,d,e,f,m,n,o,q,r,s,answer;
+	for(r=1;;++r)
+	{	
+		printf("\n\n    多人猜数字小游戏第%d局\n\n(请不要尝试输入其他字符，空格都不行！)\n",r);
+		for(o=1;;++o)
+		{			
+			printf("\n请输入游戏人数：");
+			scanf("%d",&c);
+			if(c<=0)
+			{
+				printf("\n你丫的到底会不会数数！？\n");			
+			}			
+			if(c>0)
+			{
+				break;
+			}			
+		}
+		for(n=1;;++n)
+		{	
+			printf("\n请输入随机数下限：");
+			scanf("%d",&a);	
+			printf("\n请输入随机数上限：");
+			scanf("%d",&b);
+			if(a>b)
+			{
+				printf("\n皮这一下你快乐吗？\n\n再给你一次机会\n");
+			}
+			if(a==b)
+			{
+				printf("你这哪里还用猜？！\n\n再给你一次机会\n");		 
+			} 
+			if(a<b)
+			{
+				break;
+			}
+		}
+		e=a;
+		f=b;
+		srand((unsigned)time(NULL));
+		answer=rand()%(b-a+1)+a;
+		printf("\n     温馨提示：答案不一定是%d哦\n\n",answer);
+		for(m=1;;++m)
+		{	
+			m=(m-1)%c+1;
+			printf("第%d个人请猜一个从%d到%d的数:",m,e,f);
+			scanf("%d",&d);
+			if(d==answer)
+			{
+				printf("\n恭喜第%d个人猜对了！\n\n",m);
+				break;
+			}						
+			if(d!=answer)
+			{				
+				for(q=1;;++q)
+				{		
+					if(d>f)
+					{
+						printf("\n最起码也要比%d小吧\n\n第%d个人请重新输入一次吧：",f,m);
+						scanf("%d",&d); 
+					}
+					if(d<=f&&d>answer)
+					{
+						printf("\n不对，太大啦！\n\n");
+						f=d-1;
+						break;
+					}
+					if(d<e)
+					{
+						printf("\n最起码也要比%d大吧\n\n第%d个人请重新输入一次吧：",e,m);
+						scanf("%d",&d);
+					}
+					if(d>=e&&d<answer)
+					{
+						printf("\n不对，太小啦！\n\n");
+						e=d+1;
+						break;
+					}
+				}
+			}
+		}
+		printf("游戏结束了，要不要再来一局？\n\n输入1再来一局，输入其他数字结束游戏：");
+		scanf("%d",&s);
+		if(s!=1)
+		{			
+			break;
+		}
+		if(s==1)
+		{
+			system("cls");
+		}
+	}
+	getchar();
+	getchar();
+	return 0;		
+} 
