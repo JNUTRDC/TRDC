@@ -42,11 +42,13 @@ int main() {
 	system("cls");
 	
 	correct[num] = { -1 };
+	int x;
+	int y;//x,y是坐标
 	for (int time = 0;time<16;time++) {//time为猜的次数
 		screen(puke[num],correct[num]);
 		judge(x,y,time);
 		if (time % 2 == 1) {
-			if (n[1] != n[0]) {
+			if (puke[n[1]] != puke[n[0]]) {
 				correct[time-1] = correct[time - 2] = -1;
 				time -= 2;
 			}
