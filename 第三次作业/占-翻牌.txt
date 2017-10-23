@@ -1,0 +1,68 @@
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+#include<conio.h>
+#include<windows.h>
+char b[4][4]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};int s,t;
+void put()
+{
+     for(s=0;s<4;s++)
+        {
+		 for(t=0;t<4;t++)
+			 printf("%4d",b[s][t]);
+		     printf("\n");
+	 }
+}
+
+void main()
+{
+	int i,j,c,d,e,f,bl=0;long Itend,Itstart;float timeuse;
+	int system(const char *string); 
+    char a[4][4];
+	srand((unsigned)time(NULL));
+
+	for(i=0;i<4;i++)
+		for(j=0;j<4;j++)
+			a[i][j]=rand()%8+1;
+	for(i=0;i<4;i++)
+	{
+			for(j=0;j<4;j++)
+				printf("%d\t",a[i][j]);
+			printf("\n");
+	}
+    _sleep(2000);
+    system("cls");
+    bl=0;
+    Itstart=clock();
+	put();
+	while(1){
+		for(i=1;i<=16;i++)
+		{
+			printf("请输入第一个点的坐标，用空格隔开：\n");
+			scanf("%d %d",&c,&d);
+			printf("请输入第二个点的坐标，用空格隔开：\n");
+			scanf("%d %d",&e,&f);
+			if(c>4||d>4||e>4||f>4)
+			{
+				printf("输入数据有误，请输入0~4的数字：\n");
+				i=i-1;
+				continue;
+			}
+			else
+			{
+				c=c-1,d=d-1;e=e-1,f=f-1;
+				b[c][d]=a[c][d];b[e][f]=a[e][f];
+				printf("\n");
+				if (a[c][d]==a[e][f])
+					put();
+				printf("\n");
+			}
+		}
+	}
+	printf("YOU WIN!!!\n");
+	Itend=clock();
+	timeuse=((float)(Itend-Itstart))/CLOCKS_PER_SEC;
+	printf("execution time:%ld millsecond(%f second)\n",Itend-Itstart,timeuse);
+}
+
+
