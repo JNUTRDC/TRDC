@@ -68,6 +68,7 @@ void renew(card (&blocks)[26][26],int row,int column)//瞎几把赋值
     counts=0;a[1]='1';a[2]='2';a[3]='3';a[4]='4';
     a[5]='5';a[6]='6';a[7]='7';a[8]='8';a[9]='9';
     a[10]='I';a[11]='J';a[12]='Q';a[13]='K';
+    srand((unsigned)time(NULL));
     for(int i=0; i<row; i++)
        {
             for(int j=0; j<column; j++)
@@ -76,7 +77,6 @@ void renew(card (&blocks)[26][26],int row,int column)//瞎几把赋值
                 do
                 {
                     tempCounts=counts;
-                    srand((unsigned)time(NULL));
                     tempForchar=rand()%13+1;//获取某个卡牌的正面1~13;
                     while(tempCounts>=0)
                     {
@@ -104,9 +104,7 @@ void renew(card (&blocks)[26][26],int row,int column)//瞎几把赋值
                 if(j!=column&&i!=row)
                 do
                 {
-                    srand((unsigned)time(NULL));
                     x=rand()%row;
-                    srand((unsigned)time(NULL));
                     y=rand()%column;
                 }
                 while(blocks[x][y].Contrary=='*');
