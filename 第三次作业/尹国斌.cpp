@@ -20,18 +20,18 @@ struct card
     char Condition;//close->c,open->o
 };
 
-rowColumn gain(rowColumn S)//ÅĞ¶¨ĞĞÁĞÊÇ·ñºÏÀí²¢»ñÈ¡Ò»¶¨µÄĞĞÁĞ
+rowColumn gain(rowColumn S)//åˆ¤å®šè¡Œåˆ—æ˜¯å¦åˆç†å¹¶è·å–ä¸€å®šçš„è¡Œåˆ—
 {
     int bing=0;
     do
     {
-        cout<<"ÇëÊäÈëÒªÇóµÄĞĞ¡¢ÁĞ£º"<<endl;
+        cout<<"è¯·è¾“å…¥è¦æ±‚çš„è¡Œã€åˆ—ï¼š"<<endl;
         cin>>S.row>>S.column;
         if((S.row*S.column)%2==0 && (S.row*S.column)<=26)
             bing=1;
         else
         {
-            cout<<"Êı¾İ²»ºÏÀíÅ¶ÇëÖØĞÂÊäÈë"<<endl;
+            cout<<"æ•°æ®ä¸åˆç†å“¦è¯·é‡æ–°è¾“å…¥"<<endl;
             Sleep(3000);
             system("Cls");
         }
@@ -40,7 +40,7 @@ rowColumn gain(rowColumn S)//ÅĞ¶¨ĞĞÁĞÊÇ·ñºÏÀí²¢»ñÈ¡Ò»¶¨µÄĞĞÁĞ
     return S;
 }
 
-void print(card(&blocks)[26][26],int row,int column)//´òÓ¡³¡ÃæÇé¿ö
+void print(card(&blocks)[26][26],int row,int column)//æ‰“å°åœºé¢æƒ…å†µ
 {
     for(int i=0; i<row; i++)
     {
@@ -54,7 +54,7 @@ void print(card(&blocks)[26][26],int row,int column)//´òÓ¡³¡ÃæÇé¿ö
     cout<<endl;
 }
 
-void renew(card (&blocks)[26][26],int row,int column)//Ï¹¼¸°Ñ¸³Öµ
+void renew(card (&blocks)[26][26],int row,int column)//çå‡ æŠŠèµ‹å€¼
 {
     for(int i=0; i<26; i++)
         for(int j=0; j<26; j++)
@@ -68,6 +68,7 @@ void renew(card (&blocks)[26][26],int row,int column)//Ï¹¼¸°Ñ¸³Öµ
     counts=0;a[1]='1';a[2]='2';a[3]='3';a[4]='4';
     a[5]='5';a[6]='6';a[7]='7';a[8]='8';a[9]='9';
     a[10]='I';a[11]='J';a[12]='Q';a[13]='K';
+    srand((unsigned)time(NULL));
     for(int i=0; i<row; i++)
        {
             for(int j=0; j<column; j++)
@@ -76,14 +77,13 @@ void renew(card (&blocks)[26][26],int row,int column)//Ï¹¼¸°Ñ¸³Öµ
                 do
                 {
                     tempCounts=counts;
-                    srand((unsigned)time(NULL));
-                    tempForchar=rand()%13+1;//»ñÈ¡Ä³¸ö¿¨ÅÆµÄÕıÃæ1~13;
+                    tempForchar=rand()%13+1;//è·å–æŸä¸ªå¡ç‰Œçš„æ­£é¢1~13;
                     while(tempCounts>=0)
                     {
                         if(tempFornum[tempCounts]==tempForchar)break;
                         tempCounts--;
                     }
-                }while(tempCounts!=-1); //»ñµÃÕıÈ·µÄËæ»úÖµ
+                }while(tempCounts!=-1); //è·å¾—æ­£ç¡®çš„éšæœºå€¼
                 tempFornum[counts]=tempForchar;
                 while(blocks[i][j].Contrary!='%')
                 {
@@ -104,9 +104,7 @@ void renew(card (&blocks)[26][26],int row,int column)//Ï¹¼¸°Ñ¸³Öµ
                 if(j!=column&&i!=row)
                 do
                 {
-                    srand((unsigned)time(NULL));
                     x=rand()%row;
-                    srand((unsigned)time(NULL));
                     y=rand()%column;
                 }
                 while(blocks[x][y].Contrary=='*');
@@ -118,20 +116,20 @@ void renew(card (&blocks)[26][26],int row,int column)//Ï¹¼¸°Ñ¸³Öµ
             if(counts==row*column/2)break;
     }
 }
-rowColumn getDate(card (&blocks)[26][26],int row1,int column1)//·­ÅÆ
+rowColumn getDate(card (&blocks)[26][26],int row1,int column1)//ç¿»ç‰Œ
 {
-    rowColumn temp;//»ñÈ¡×ø±ê
+    rowColumn temp;//è·å–åæ ‡
     int bing=0;
     do
     {
         bing=0;
-        cout<<"ÇëÊäÈëÄãÏë·­¿ªÅÆµÄ×ø±ê£º"<<endl;
+        cout<<"è¯·è¾“å…¥ä½ æƒ³ç¿»å¼€ç‰Œçš„åæ ‡ï¼š"<<endl;
         cin>>temp.row>>temp.column;
         cout<<endl;
         if(temp.row>0&&temp.row<=row1&&temp.column>0&&temp.column<=column1)bing++;
-        else {cout<<"ĞĞÁĞÊı¾İ³¬³ö·¶Î§ÇëÖØÊÔ"<<endl;}
+        else {cout<<"è¡Œåˆ—æ•°æ®è¶…å‡ºèŒƒå›´è¯·é‡è¯•"<<endl;}
         if(blocks[temp.row-1][temp.column-1].Condition=='c')bing++;
-        else{cout<<"´Ë¿¨ÒÑ·­¿ª"<<endl;bing=0;}
+        else{cout<<"æ­¤å¡å·²ç¿»å¼€"<<endl;bing=0;}
     }
     while(bing!=2);
     temp.Temp=blocks[temp.row-1][temp.column-1].Front;
@@ -139,7 +137,7 @@ rowColumn getDate(card (&blocks)[26][26],int row1,int column1)//·­ÅÆ
     return temp;
 }
 
-void Begins(card (&blocks)[26][26],int row,int column)//ÓÎÏ·¿ªÊ¼
+void Begins(card (&blocks)[26][26],int row,int column)//æ¸¸æˆå¼€å§‹
 {
     rowColumn temp1,temp2;
     int counts=0;
@@ -154,7 +152,7 @@ void Begins(card (&blocks)[26][26],int row,int column)//ÓÎÏ·¿ªÊ¼
         {
             blocks[temp1.row-1][temp1.column-1].Condition='c';
             blocks[temp2.row-1][temp2.column-1].Condition='c';
-            cout<<"WRONG!!!Á½ÃëºóÖØÊÔ"<<endl;
+            cout<<"WRONG!!!ä¸¤ç§’åé‡è¯•"<<endl;
             Sleep(2000);
             system("Cls");
         }
@@ -170,6 +168,6 @@ int main()
     card blocks[26][26];
     renew(blocks,gameSize.row,gameSize.column);
     print(blocks,gameSize.row,gameSize.column);
-    Begins(blocks,gameSize.row,gameSize.column);//ÓÎÏ·¿ªÊ¼
+    Begins(blocks,gameSize.row,gameSize.column);//æ¸¸æˆå¼€å§‹
     return 0;
 }

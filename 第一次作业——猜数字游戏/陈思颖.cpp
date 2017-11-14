@@ -1,51 +1,58 @@
 #include <iostream>
 using namespace std;
 #include<cstdlib>
-#include<time.h>
+#include<ctime>
 #include<dos.h>
-#include<cstdlib>
 
 
 int main()
 {
 	char ch='n';
 	while (ch != 'N') {
-		int  min, max;//minæœ€å°å€¼maxæœ€å¤§å€¼
-		int i, r;//réšæœºæ•°
-		int num, peop;//numå½“å‰æ¸¸æˆè¿™çš„åºå·ï¼Œpeopæ¸¸æˆå‚ä¸äººæ•°
-		cout << "è¯·è¾“å…¥æ¸¸æˆäººæ•°ï¼š";
-		cin >> peop;
-		cout << "è¯·è¾“å…¥ä¸‹ä¸Šç•Œï¼Œç”¨ç©ºæ ¼éš”å¼€ï¼š";
-		cin >> min >> max;
-		srand((unsigned)time(0));
-		for (i = 0; i < 1; i++) {
-			r = (rand() % (max - min)) + min + 1;
-			cout << r << " ";
-		}
+			int  min, max;//min×îĞ¡Öµmax×î´óÖµ
+			int i, r;//rËæ»úÊı
+			int num, peop;//numµ±Ç°ÓÎÏ·ÕâµÄĞòºÅ£¬peopÓÎÏ·²ÎÓëÈËÊı
+			cout << "ÇëÊäÈëÓÎÏ·ÈËÊı£º";
+			cin >> peop;
+			cout << "ÇëÊäÈëÏÂÉÏ½ç£¬ÓÃ¿Õ¸ñ¸ô¿ª£º";
+			cin >> min >> max;
+
+			srand((unsigned)time(0));
+			for (i = 0; i < 1; i++) {
+				r = (rand() % (max - min)) + min + 1;
+				cout << r << " ";
+			}
 
 			system("cls");
 
-			int guess;//guessçŒœçš„æ•°å­—
-			num = 1;
+			int guess;//guess²ÂµÄÊı×Ö
+			num = 0;
 			guess = r - 1;
 			while (guess != r) {
-				cout << "ç¬¬" << num << "ä¸ªäººè¯·è¾“å…¥ä¸€ä¸ª" << min << "~" << max << "çš„æ•°å­—";
+				num++;
+				cout << "µÚ" << num << "¸öÈËÇëÊäÈëÒ»¸ö" << min << "~" << max << "µÄÊı×Ö";
 				cin >> guess;
 				while ((guess > max) || (guess < min)){
-					cout << "è¾“å…¥æ•°æ®æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ä¸€ä¸ª" << min << "~" << max << "çš„æ•°å­—";
+					cout << "ÊäÈëÊı¾İÓĞÎó£¬ÇëÖØĞÂÊäÈëÒ»¸ö" << min << "~" << max << "µÄÊı×Ö";
 					cin >> guess;
 				}
 				if (guess < r)
-					cout << "å°äº†",min = guess;
-				if(guess>r)	 
-					cout << "å¤§äº†", max = guess;
-				num++; num = num%peop;
+				{
+					cout << "Ğ¡ÁË";
+					min = guess;
+					num = num%peop;
+				}
+				if (guess > r)
+				{
+					cout << "´óÁË";
+					max = guess;
+					num = num%peop;
+				}
 			}
-			num--;
 			if (guess == r)
-				cout << "ç¬¬" << num << "ä¸ªäººboom!";
+				cout << "µÚ" << num << "¸öÈËboom!";
 
-		cout << "è¯·é—®æ˜¯å¦é‡æ–°å¼€å§‹ï¼ŸY(es)orN(o)";
+		cout << "ÇëÎÊÊÇ·ñÖØĞÂ¿ªÊ¼£¿Y(es)orN(o)";
 		cin >> ch;
 	}
 
